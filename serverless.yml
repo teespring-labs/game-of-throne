@@ -19,18 +19,18 @@ service: aws-nodejs # NOTE: update this with your service name
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
 
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+  iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - s3:*
+        Resource: arn:aws:s3:::canigoyet.teespring.com/*
 #    - Effect: "Allow"
 #      Action:
 #        - "s3:PutObject"
@@ -55,13 +55,22 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: js/handler.hello
+  pooperBusy:
+    handler: js/handler.pooperBusy
     events:
      - http:
-         path: poop/hello
+         path: poop/busy
          method: get
          cors: true
+  pooperFree:
+    handler: js/handler.pooperFree
+    events:
+      - http:
+          path: poop/free
+          method: get
+          cors: true
+
+
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
