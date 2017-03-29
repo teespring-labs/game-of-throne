@@ -1,0 +1,27 @@
+{
+  "name": "game-of-throne",
+  "version": "1.0.0",
+  "description": "Reaching for Bathroom Freedom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teespring/game-of-throne.git"
+  },
+  "keywords": [
+    "Bathroom",
+    "poop",
+    "canigoyet"
+  ],
+  "author": "Tim Growney, Bryant Yik, Matt Stern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teespring/game-of-throne/issues"
+  },
+  "homepage": "https://github.com/teespring/game-of-throne#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.34.0"
+  }
+}
