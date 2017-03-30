@@ -23,7 +23,7 @@
     <div id="updated">      
     </div>
     <div>
-    <font color="grey">Refreshes every 15 seconds </font>
+    <font color="grey">Refreshes every 5 seconds </font>
     </div>
   </div>
 
@@ -31,7 +31,7 @@
   <script type="text/javascript">
   
     function getTolietStatus() {
-      setTimeout(getTolietStatus, 15000);
+      setTimeout(getTolietStatus, 5000);
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
