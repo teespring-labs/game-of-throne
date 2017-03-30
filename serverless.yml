@@ -69,15 +69,6 @@ functions:
           path: poop/free
           method: get
           cors: true
-  pooperLastUpdated:
-    handler: js/handler.pooperLastUpdated
-    events:
-      - s3:
-          bucket: canigoyet.teespring.com
-          event: s3:ObjectCreated:*
-          rules:
-            - suffix: .json
-
 
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
