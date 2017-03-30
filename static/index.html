@@ -36,15 +36,23 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var status = JSON.parse(this.responseText);
+          if (status.state == "YES") {
+            document.getElementById("status").style.color = 'Green'
+          }
+          else {
+            document.getElementById("status").style.color = 'Red' 
+          }
           document.getElementById("status").innerHTML =
           status.state
+          var local_datetime = new Date(status.UpdatedDate)
           document.getElementById("updated").innerHTML =
-          "Last Updated at: " + status.UpdatedDate
+          "Last Updated at: " + local_datetime.toLocaleString()
         }
       };
       xhttp.open("GET", "https://d1hwvdyij5jneh.cloudfront.net/state", true);
       xhttp.send();
     }
+
   </script>
 
 </body>
