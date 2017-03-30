@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DD873051E8CA94D0096C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD873041E8CA94D0096C7F9 /* AppDelegate.swift */; };
+		8DD873091E8CA94D0096C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD873081E8CA94D0096C7F9 /* Assets.xcassets */; };
+		8DD8730C1E8CA94D0096C7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD8730A1E8CA94D0096C7F9 /* Main.storyboard */; };
+		8DD873141E8D7FC30096C7F9 /* Poop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD873131E8D7FC30096C7F9 /* Poop.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8DD873011E8CA94D0096C7F9 /* CanIGoYet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanIGoYet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD873041E8CA94D0096C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8DD873081E8CA94D0096C7F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8DD8730B1E8CA94D0096C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DD8730D1E8CA94D0096C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD873131E8D7FC30096C7F9 /* Poop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Poop.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD872FE1E8CA94D0096C7F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8DD872F81E8CA94D0096C7F9 = {
+			isa = PBXGroup;
+			children = (
+				8DD873031E8CA94D0096C7F9 /* WhoPooping */,
+				8DD873021E8CA94D0096C7F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8DD873021E8CA94D0096C7F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD873011E8CA94D0096C7F9 /* CanIGoYet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DD873031E8CA94D0096C7F9 /* WhoPooping */ = {
+			isa = PBXGroup;
+			children = (
+				8DD873041E8CA94D0096C7F9 /* AppDelegate.swift */,
+				8DD873081E8CA94D0096C7F9 /* Assets.xcassets */,
+				8DD8730A1E8CA94D0096C7F9 /* Main.storyboard */,
+				8DD873131E8D7FC30096C7F9 /* Poop.wav */,
+				8DD8730D1E8CA94D0096C7F9 /* Info.plist */,
+			);
+			path = WhoPooping;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD873001E8CA94D0096C7F9 /* CanIGoYet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DD873101E8CA94D0096C7F9 /* Build configuration list for PBXNativeTarget "CanIGoYet" */;
+			buildPhases = (
+				8DD872FD1E8CA94D0096C7F9 /* Sources */,
+				8DD872FE1E8CA94D0096C7F9 /* Frameworks */,
+				8DD872FF1E8CA94D0096C7F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CanIGoYet;
+			productName = WhoPooping;
+			productReference = 8DD873011E8CA94D0096C7F9 /* CanIGoYet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DD872F91E8CA94D0096C7F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Mike Kavouras";
+				TargetAttributes = {
+					8DD873001E8CA94D0096C7F9 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = A56D86G827;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8DD872FC1E8CA94D0096C7F9 /* Build configuration list for PBXProject "CanIGoYet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8DD872F81E8CA94D0096C7F9;
+			productRefGroup = 8DD873021E8CA94D0096C7F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD873001E8CA94D0096C7F9 /* CanIGoYet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DD872FF1E8CA94D0096C7F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD873091E8CA94D0096C7F9 /* Assets.xcassets in Resources */,
+				8DD873141E8D7FC30096C7F9 /* Poop.wav in Resources */,
+				8DD8730C1E8CA94D0096C7F9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD872FD1E8CA94D0096C7F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD873051E8CA94D0096C7F9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8DD8730A1E8CA94D0096C7F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DD8730B1E8CA94D0096C7F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8DD8730E1E8CA94D0096C7F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8DD8730F1E8CA94D0096C7F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		8DD873111E8CA94D0096C7F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = A56D86G827;
+				INFOPLIST_FILE = WhoPooping/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikekavouras.CanIGoYet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8DD873121E8CA94D0096C7F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = A56D86G827;
+				INFOPLIST_FILE = WhoPooping/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikekavouras.CanIGoYet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8DD872FC1E8CA94D0096C7F9 /* Build configuration list for PBXProject "CanIGoYet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DD8730E1E8CA94D0096C7F9 /* Debug */,
+				8DD8730F1E8CA94D0096C7F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DD873101E8CA94D0096C7F9 /* Build configuration list for PBXNativeTarget "CanIGoYet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DD873111E8CA94D0096C7F9 /* Debug */,
+				8DD873121E8CA94D0096C7F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8DD872F91E8CA94D0096C7F9 /* Project object */;
+}
