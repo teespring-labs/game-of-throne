@@ -31,7 +31,7 @@ module.exports.pooperFree = (event, context, callback) => {
 function pooperLastUpdated () {
   return new Promise(function (resolve, reject) {
     let promises = []
-    promises.push(s3connector.getStateFiles('state.json'))
+    promises.push(s3connector.getStateFiles('state'))
     promises.push(s3connector.getStateFiles('last_updated'))
     Promise.all(promises).then(function (data) {
       let currentStateObject = JSON.parse(String.fromCharCode.apply(null, data[0].Body))

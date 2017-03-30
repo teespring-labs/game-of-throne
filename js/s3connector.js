@@ -2,7 +2,7 @@
 
 let S3 = require('aws-sdk/clients/s3')
 let POOP_BUCKET = 'canigoyet.teespring.com'
-let POOP_STATUS_FILE_NAME = 'state.json'
+let POOP_STATUS_FILE_NAME = 'state'
 let POOP_LAST_UPDATED_FILE_NAME = 'last_updated'
 
 module.exports.init = function () {
