@@ -5,7 +5,7 @@ let s3connector = require('./s3connector').init()
 module.exports.pooperBusy = (event, context, callback) => {
   s3connector.updatePoopStatusFileBusy()
   .then(function () {
-      pooperLastUpdated().catch(function(err){
+    pooperLastUpdated().catch(function (err) {
       console.log('Caught an error while updating last updated file: ' + err)
     })
 
@@ -18,9 +18,9 @@ module.exports.pooperBusy = (event, context, callback) => {
 module.exports.pooperFree = (event, context, callback) => {
   s3connector.updatePoopStatusFileFree()
     .then(function () {
-      pooperLastUpdated().catch(function(err){
-      console.log('Caught an error while updating last updated file: ' + err)
-    })
+      pooperLastUpdated().catch(function (err) {
+        console.log('Caught an error while updating last updated file: ' + err)
+      })
 
       handleCallback(true, callback)
     }).catch(function (err) {
@@ -29,15 +29,15 @@ module.exports.pooperFree = (event, context, callback) => {
 }
 
 function pooperLastUpdated () {
-  return new Promise(function(resolve, reject){
+  return new Promise(function (resolve, reject) {
     let promises = []
     promises.push(s3connector.getStateFiles('state.json'))
     promises.push(s3connector.getStateFiles('last_updated'))
     Promise.all(promises).then(function (data) {
       let currentStateObject = JSON.parse(String.fromCharCode.apply(null, data[0].Body))
       let lastUpdatedObject = JSON.parse(String.fromCharCode.apply(null, data[1].Body))
-      if (currentStateObject.state != lastUpdatedObject.state) {
-        s3connector.updatePoopLastUpdatedFile(currentStateObject).then(function() {
+      if (currentStateObject.state !== lastUpdatedObject.state) {
+        s3connector.updatePoopLastUpdatedFile(currentStateObject).then(function () {
           resolve(true)
         })
       } else {

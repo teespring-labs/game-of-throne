@@ -33,7 +33,7 @@ module.exports.updatePoopLastUpdatedFile = function (stateFile) {
   })
 }
 
-module.exports.getStateFiles = function(fileName) {
+module.exports.getStateFiles = function (fileName) {
   return new Promise((resolve, reject) => {
     S3.getObject(generateGetObjectParams(fileName), handlePromiseError(resolve, reject))
   })
@@ -48,7 +48,7 @@ function updatePoopStatusParams (isFree) {
   }
 }
 
-function getUpdateParams(stateFile) {
+function getUpdateParams (stateFile) {
   return {
     Bucket: POOP_BUCKET,
     Key: POOP_LAST_UPDATED_FILE_NAME,
