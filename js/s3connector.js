@@ -2,7 +2,8 @@
 
 let S3 = require('aws-sdk/clients/s3')
 let POOP_BUCKET = 'canigoyet.teespring.com'
-let POOP_STATUS_FILE_NAME = 'state'
+let POOP_STATUS_FILE_NAME = 'state.json'
+let POOP_LAST_UPDATED_FILE_NAME = 'last_updated'
 
 module.exports.init = function () {
   S3 = new S3({
@@ -26,12 +27,40 @@ module.exports.updatePoopStatusFileFree = function () {
   })
 }
 
+module.exports.updatePoopLastUpdatedFile = function (stateFile) {
+  return new Promise((resolve, reject) => {
+    S3.putObject(getUpdateParams(stateFile), handlePromiseError(resolve, reject))
+  })
+}
+
+module.exports.getStateFiles = function(fileName) {
+  return new Promise((resolve, reject) => {
+    S3.getObject(generateGetObjectParams(fileName), handlePromiseError(resolve, reject))
+  })
+}
+
 function updatePoopStatusParams (isFree) {
   return {
     Bucket: POOP_BUCKET,
     Key: POOP_STATUS_FILE_NAME,
     ACL: 'public-read',
     Body: JSON.stringify({state: isFree, UpdatedDate: new Date().toISOString()})
+  }
+}
+
+function getUpdateParams(stateFile) {
+  return {
+    Bucket: POOP_BUCKET,
+    Key: POOP_LAST_UPDATED_FILE_NAME,
+    ACL: 'public-read',
+    Body: JSON.stringify(stateFile)
+  }
+}
+
+function generateGetObjectParams (fileName) {
+  return {
+    Bucket: POOP_BUCKET,
+    Key: fileName
   }
 }
 
