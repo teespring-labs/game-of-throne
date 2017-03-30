@@ -20,7 +20,7 @@
     <h1 id="status">
     Updating...
     </h1>
-    <div id="updated">      
+    <div id="updated">
     </div>
     <div>
     <font color="grey">Refreshes every 5 seconds </font>
@@ -29,7 +29,7 @@
 
 
   <script type="text/javascript">
-  
+
     function getTolietStatus() {
       setTimeout(getTolietStatus, 5000);
       var xhttp = new XMLHttpRequest();
@@ -42,7 +42,7 @@
           "Last Updated at: " + status.UpdatedDate
         }
       };
-      xhttp.open("GET", "http://canigoyet.teespring.com.s3-website.us-east-2.amazonaws.com/state", true);
+      xhttp.open("GET", "https://d1hwvdyij5jneh.cloudfront.net/state", true);
       xhttp.send();
     }
   </script>
