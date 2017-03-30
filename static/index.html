@@ -13,18 +13,45 @@
       right: 0;
       margin: auto;
     }
+
+    #updated {
+      margin-bottom: 6px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .download {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      transition-duration: 0.1s;
+      background-color: #ee2761;
+      color: #fff;
+    }
+
+    .download:hover {
+      background-color: #af1e48
+    }
+
   </style>
 </head>
 <body onload="getTolietStatus()">
   <div id="main_container">
     <h1 id="status">
-    Updating...
+      Updating...
     </h1>
+
     <div id="updated">
     </div>
+
     <div>
-    <font color="grey">Refreshes every 5 seconds </font>
+      <p style="color:grey">(refreshes every 5 seconds)</p>
     </div>
+
+    <a class="download" href="https://s3.us-east-2.amazonaws.com/canigoyet.teespring.com/CanIGoYet.app.zip">Download the app</a>
   </div>
 
 
