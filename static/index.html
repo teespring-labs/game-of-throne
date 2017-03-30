@@ -51,9 +51,11 @@
       <p style="color:grey">(refreshes every 5 seconds)</p>
     </div>
 
-    <a class="download" href="https://s3.us-east-2.amazonaws.com/canigoyet.teespring.com/CanIGoYet.app.zip">Download the app</a>
-  </div>
+    <div id="time"></div>
 
+    <a class="download" href="https://s3.us-east-2.amazonaws.com/canigoyet.teespring.com/CanIGoYet.app.zip">Download the app</a>
+    
+  </div>
 
   <script type="text/javascript">
 
@@ -78,8 +80,49 @@
       };
       xhttp.open("GET", "https://canigoyet.teespring.com/state.json", true);
       xhttp.send();
+      display_clock();
     }
 
+    function display_clock() {
+      setTimeout(display_clock, 5000);
+      var lastUpdatedTime;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var status = JSON.parse(this.responseText);
+          lastUpdatedTime = new Date(status.UpdatedDate)
+        }
+      };
+      xhttp.open("GET", "https://canigoyet.teespring.com/last_updated", true);
+      xhttp.send();
+
+      display(lastUpdatedTime);
+    }
+
+    function display(lastUpdatedTime) {
+      // later record end time
+      var endTime = new Date();
+      // time difference in ms
+      var timeDiff = endTime - lastUpdatedTime;
+      // strip the miliseconds
+      timeDiff /= 1000;
+      // get seconds
+      var seconds = Math.round(timeDiff % 60);
+      // remove seconds from the date
+      timeDiff = Math.floor(timeDiff / 60);
+      // get minutes
+      var minutes = Math.round(timeDiff % 60);
+      // remove minutes from the date
+      timeDiff = Math.floor(timeDiff / 60);
+      // get hours
+      var hours = Math.round(timeDiff % 24);
+      // remove hours from the date
+      timeDiff = Math.floor(timeDiff / 24);
+
+      document.getElementById("time")
+      $("#time").innerHTML = "Time in current state: " + hours + "hours" + minutes + "minutes" + seconds + "seconds";
+      setTimeout(display, 1000);
+    }
   </script>
 
 </body>
