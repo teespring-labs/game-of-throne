@@ -38,7 +38,7 @@
 
   </style>
 </head>
-<body onload="getTolietStatus()">
+<body onload="getTolietStatus(); display_clock();">
   <div id="main_container">
     <h1 id="status">
       Updating...
@@ -47,17 +47,19 @@
     <div id="updated">
     </div>
 
+    <div id="time">Time in current state: 0 hours 0 minutes 0 seconds</div>
+
     <div>
       <p style="color:grey">(refreshes every 5 seconds)</p>
     </div>
-
-    <div id="time"></div>
 
     <a class="download" href="https://s3.us-east-2.amazonaws.com/canigoyet.teespring.com/CanIGoYet.app.zip">Download the app</a>
     
   </div>
 
   <script type="text/javascript">
+    var lastUpdatedTime = new Date();
+    setInterval(display, 1000);
 
     function getTolietStatus() {
       setTimeout(getTolietStatus, 5000);
@@ -80,12 +82,10 @@
       };
       xhttp.open("GET", "https://canigoyet.teespring.com/state", true);
       xhttp.send();
-      display_clock();
     }
 
     function display_clock() {
       setTimeout(display_clock, 5000);
-      var lastUpdatedTime;
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -95,11 +95,9 @@
       };
       xhttp.open("GET", "https://canigoyet.teespring.com/last_updated", true);
       xhttp.send();
-
-      display(lastUpdatedTime);
     }
 
-    function display(lastUpdatedTime) {
+    function display() {
       // later record end time
       var endTime = new Date();
       // time difference in ms
@@ -119,9 +117,7 @@
       // remove hours from the date
       timeDiff = Math.floor(timeDiff / 24);
 
-      document.getElementById("time")
-      $("#time").innerHTML = "Time in current state: " + hours + "hours" + minutes + "minutes" + seconds + "seconds";
-      setTimeout(display, 1000);
+      document.getElementById("time").innerHTML = "Time in current state: " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
     }
   </script>
 
