@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             if isUrgent {
                 timer = Timer(timeInterval: 0.2, target: self, selector: #selector(showCrazyIcon), userInfo: nil, repeats: true)
                 RunLoop.current.add(timer!, forMode: .defaultRunLoopMode)
-                statusItem.menu?.items.first?.title = "Gotta go!"
+                statusItem.menu?.items.first?.title = "😳"
             } else {
                 timer?.invalidate()
                 timer = nil
@@ -36,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     
     private var status: BathroomStatus = .unknown {
         willSet {
-            statusItem.menu?.items.first?.isEnabled = status == .occupied
+            statusItem.menu?.items.first?.isHidden = status != .occupied
             
             let oldStatus = status
             let newStatus = newValue
@@ -74,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     
     private func setupMenu() {
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Gotta go!", action: #selector(firstMenuItemSelected(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "😳", action: #selector(firstMenuItemSelected(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit(_:)), keyEquivalent: "q"))
         menu.autoenablesItems = false
@@ -85,11 +85,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
     
     @objc private func firstMenuItemSelected(_ item: NSMenuItem) {
-        if isUrgent {
-            statusItem.menu?.items.first?.title = "Gotta go!"
-        } else {
-            statusItem.menu?.items.first?.title = "I am relieved"
-        }
         isUrgent = !isUrgent
     }
     
@@ -128,15 +123,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
     
     @objc private func displayNotification() {
-        let notification = NSUserNotification()
-        notification.title = "Time to poop!"
-        notification.informativeText = "The toilet is available"
-        notification.soundName = "Poop.wav"
-        NSUserNotificationCenter.default.deliver(notification)
+        fetchFortune { fortune in
+            let notification = NSUserNotification()
+            notification.title = "The toilet is available"
+            notification.informativeText = "\"\(fortune)\""
+            notification.soundName = "Poop.wav"
+            NSUserNotificationCenter.default.deliver(notification)
+        }
     }
     
+    private func fetchFortune(completion: @escaping (String) -> Void) {
+        let url = "https://fortunecookieapi.herokuapp.com/v1/cookie"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "GET"
+        let session = URLSession.shared
+        
+        session.dataTask(with: request) {data, response, err in
+            if let data = data,
+            let jsonOptional = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String: Any]],
+                let json = jsonOptional,
+                let first = json.first,
+                let fortune = first["fortune"] as? [String: Any],
+                let message = fortune["message"] as? String
+            {
+                DispatchQueue.main.async {
+                    completion(message)
+                }
+            }
+        }.resume()
+    }
+        
+    
     func menuWillOpen(_ menu: NSMenu) {
-         menu.items.first?.isEnabled = status == .occupied
+        let title = isUrgent ? "😌" : "😳"
+        statusItem.menu?.items.first?.title = title
+        menu.items.first?.isHidden = status != .occupied
     }
 }
 
