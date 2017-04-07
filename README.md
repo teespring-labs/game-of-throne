@@ -50,7 +50,7 @@ When adding a new function, ensure that you update the `serverless.yml` to tie a
 Deploying is as simple as calling the deploy script at `scripts/deploy.sh`, which utilizes your AWS credentials within .env and calls the serverless executable.
 
 ### The Raspberry Pi
-The RPi is our way of interacting with the physical world.  It's mounted to the bathroom stall door, with one wire attached to a +5V GPIO port, and another attached to a GPIO input pin.  The wires are affixed with a gap between them, opposite the door lock rod.  When the lock rod makes contact, it completes a circuit, letting the RPi know that the door lock mechanism has been engaged.
+The RPi is our way of interacting with the physical world.  It's mounted to the bathroom stall door, with one wire attached to a +3.3V GPIO port, and another attached to a GPIO input pin.  The wires are affixed with a gap between them, opposite the door lock rod.  When the lock rod makes contact, it completes a circuit, letting the RPi know that the door lock mechanism has been engaged.
 
 When the lock rod makes contact, a nodejs application running locally on the RPi detects whether or not the GPIO input pin detects a high voltage.  If it does, the nodejs app performs an HTTP GET on the /dev/poop/free endpoint.  Otherwise, it performs an HTTP GET on /dev/poop/busy.
 
