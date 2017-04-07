@@ -64,7 +64,7 @@ The file structure on the local RPi filesystem is as follows:
 
 The RPi is currently pointed to the `game-of-throne-raspberry` repo, which no longer exists.  This repo has been merged into the `game-of-throne` repo.  You'll need to first ensure that this step is done before moving forward.
 
-On the RPi, run `npm install`.  You can then run `nodejs index.js` to start the application.  This will start polling pin 23 for a +5V input.
+On the RPi, run `npm install`.  You can then run `nodejs index.js` to start the application.  This will start polling pin 23 for a +3.3V input.
 
 #### Making Changes
 Simply edit index.js and you'll be up and running!  
